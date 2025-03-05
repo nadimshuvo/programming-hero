@@ -3,6 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" href="assets/board.png" type="image/x-icon">
     <!-- Font Poppins-->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -48,11 +49,11 @@
                   fill="#3752FD"
                 />
               </svg>
-              <span class="poppins-semibold text-[32px] leading-[48px]"
+              <span id="total-tasks" class="poppins-semibold text-[32px] leading-[48px]"
                 >23</span
               >
             </div>
-            <div class="bg-changer">
+            <div class="bg-changer cursor-pointer" onclick="bgChanger()">
               <svg
                 width="40"
                 height="40"
@@ -176,14 +177,14 @@
             </div>
             <div class="task-assigned-text text-[#00303C]">
               <p class="poppins-medium text-base">Task Assigned</p>
-              <h2 class="poppins-bold text-[32px]">05</h2>
+              <h2 class="poppins-bold text-[32px]">0<span id="task-assigned">6</span></h2>
             </div>
           </div>
           <!--// Left task Assigned -->
 
           <!-- Discover Something New -->
-          <div
-            class="discover-something-new flex-1 pt-[22px] pr-[85px] pb-[25px] pl-[40px]"
+          <div onclick="goToBlogPage()"
+            class="discover-something-new flex-1 pt-[22px] pr-[85px] pb-[25px] pl-[40px] cursor-pointer"
           >
             <div class="flex gap-5 items-center">
               <div class="logo">
@@ -196,7 +197,7 @@
           </div>
           <!--// Discover Something New -->
 
-          <!-- Right task Assigned -->
+          <!-- Right task Assigned (Time)-->
           <div class="task-assigned flex gap-4">
             <div class="img p-[18px] rounded-[100%] bg-white w-[64px] h-[64px]">
               <svg
@@ -225,8 +226,8 @@
             </div>
             <div class="task-assigned-text">
               <p class="text-[22px] leading-[33px] text-[#00303C]">
-                Wed <b>,</b><br />
-                <span class="poppins-bold">Jul 28 2025</span>
+                <span id="weekday"></span> <b>,</b><br />
+                <span class="poppins-bold" id="date-today"></span>
               </p>
             </div>
           </div>
@@ -251,12 +252,12 @@
               <div class="line my-[14px]">
                 <img src="assets/card-line.svg" alt="" />
               </div>
-              <div class="cta flex justify-between items-center">
+              <div class="cta flex justify-between">
                 <div class="time-container">
                   <h5 class="time">Deadline <br /></h5>
                   <span class="date poppins-medium">21 March 2025</span>
                 </div>
-                <div class="button poppins-medium">Completed</div>
+                <button type="button" onclick="onCompletedBtnClick(event)" class="button poppins-medium cursor-pointer">Completed</button>
               </div>
             </div>
             <!--// card-1 -->
@@ -275,7 +276,7 @@
                   <h5 class="time">Deadline <br /></h5>
                   <span class="date poppins-medium">21 March 2025</span>
                 </div>
-                <div class="button poppins-medium">Completed</div>
+                <button type="button" onclick="onCompletedBtnClick(event)" class="button poppins-medium cursor-pointer">Completed</button>
               </div>
             </div>
             <!--// card-2 -->
@@ -283,7 +284,7 @@
             <div class="task-card">
               <div class="pseudo-btn">SwiftPay</div>
               <h4 class="task-card-title poppins-medium my-4">
-                Optimize Home page 
+                Optimize Home page
               </h4>
               <div class="task-card-desc">
                 Debug using Chrome DevTools, check for overlappi...
@@ -296,7 +297,7 @@
                   <h5 class="time">Deadline <br /></h5>
                   <span class="date poppins-medium">21 March 2025</span>
                 </div>
-                <div class="button poppins-medium">Completed</div>
+                <button type="button" onclick="onCompletedBtnClick(event)" class="button poppins-medium cursor-pointer">Completed</button>
               </div>
             </div>
             <!--// card-3 -->
@@ -317,7 +318,7 @@
                   <h5 class="time">Deadline <br /></h5>
                   <span class="date poppins-medium">21 March 2025</span>
                 </div>
-                <div class="button poppins-medium">Completed</div>
+                <button type="button" onclick="onCompletedBtnClick(event)" class="button poppins-medium cursor-pointer">Completed</button>
               </div>
             </div>
             <!--// card-4 -->
@@ -338,7 +339,7 @@
                   <h5 class="time">Deadline <br /></h5>
                   <span class="date poppins-medium">21 March 2025</span>
                 </div>
-                <div class="button poppins-medium">Completed</div>
+                <button type="button" onclick="onCompletedBtnClick(event)" class="button poppins-medium cursor-pointer">Completed</b>
               </div>
             </div>
             <!--// card-5 -->
@@ -359,7 +360,7 @@
                   <h5 class="time">Deadline <br /></h5>
                   <span class="date poppins-medium">21 March 2025</span>
                 </div>
-                <div class="button poppins-medium">Completed</div>
+                <button type="button" onclick="onCompletedBtnClick(event)" class="button poppins-medium cursor-pointer">Completed</button>
               </div>
             </div>
             <!--// card-6 -->
@@ -394,21 +395,16 @@
           </svg>
           <h6 class="poppins-medium activity-log-title">Activity Log</h6>
         </div>
-        <div class="button poppins-medium max-w-[150px] mx-auto clear-history-btn">Clear History</div>
+        <div onclick="clearMessage()" class="button poppins-medium max-w-[150px] mx-auto clear-history-btn cursor-pointer">Clear History</div>
         <img
           class="mt-[14px] mb-[25px]"
           src="assets/activity-log-line.svg"
           alt=""
         />
-        <div class="completed-message-container">
-          <p class="completed-task-message">
-            You have Complete The Task Add Dark Mode at 12:48:15 PM
-          </p>
-          <p class="completed-task-message">
-            You have Complete The Task Add Dark Mode at 12:48:15 PM
-          </p>
+        <div id="completed-message-container" class="completed-message-container">
         </div>
       </div>
     </main>
+    <script src="script.js"></script>
   </body>
 </html>

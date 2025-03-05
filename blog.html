@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" href="assets/board.png" type="image/x-icon" />
+    <!-- Font Poppins-->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <!--// Font Poppins -->
+    <!-- Daisy UI -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/daisyui@5"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <!--//  Daisy UI -->
+    <link rel="stylesheet" href="style.css" />
+    <title>DevBoard</title>
+  </head>
+  <body class="poppins-regular body-blog">
+    <!-- Nav -->
+    <header class="pt-6">
+      <div class="container bg-white h-[100px] rounded-2xl">
+        <nav class="flex justify-between items-center mx-6">
+          <div class="brand-logo mt-6">
+            <img src="assets/logo.png" alt="Brand Logo" />
+          </div>
+          <div
+            onclick="backToDesk()"
+            class="button poppins-medium mt-4 cursor-pointer"
+          >
+            Back to Desk
+          </div>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <h1 class="poppins-black text-5xl text-center text-[#00303c] my-7">
+        Blogs
+      </h1>
+      <!-- Q1 -->
+      <div class="container bg-white rounded-2xl p-7">
+        <h3 class="poppins-bold text-3xl text-[#00303c] mb-4">
+          Question-1: What are the different ways to select an element in the
+          DOM?
+        </h3>
+        <img class="w-[1536px]" src="assets/divider.svg" alt="" />
+        <p class="poppins-medium text-xl text-[#00303c] my-4">
+          In JavaScript, there are several ways to select an element in the
+          <b>DOM</b>
+          (Document Object Model). Here are the most commonly used methods:
+          getElementById(), getElementsByClassName(), getElementsByTagName(),
+          querySelector(), querySelectorAll(), getElementsByName(), parentNode
+          and children, closest(), firstChild, lastChild, nextSibling,
+          previousSibling .
+        </p>
+      </div>
+      <!-- Q2 -->
+      <div class="container bg-white rounded-2xl p-7 mt-4">
+        <h3 class="poppins-bold text-3xl text-[#00303c] mb-4">
+          Question-2: What is the difference between innerHTML, innerText, and
+          textContent ?
+        </h3>
+        <img class="w-[1536px]" src="assets/divider.svg" alt="" />
+        <p class="poppins-medium text-xl text-[#00303c] my-4">
+          <b>innerHTML</b>, <b>innerText</b>, and <b>textContent</b> are all
+          properties used to get or set the content of HTML elements, but they
+          behave differently. <b>innerHTML:</b> Returns or sets the HTML content
+          inside an element, including tags. It can modify elements within the
+          target. <b>innerText:</b> Returns or sets the visible text inside an
+          element, excluding HTML tags and ignoring hidden content like display:
+          none. <b>textContent:</b> Returns or sets the text content, including
+          hidden elements, but ignores HTML tags, similar to innerText but
+          without rendering concerns like CSS visibility.
+        </p>
+      </div>
+      <!-- Q3 -->
+      <div class="container bg-white rounded-2xl p-7 mt-4">
+        <h3 class="poppins-bold text-3xl text-[#00303c] mb-4">
+          Question-3: What is event delegation in the DOM?
+        </h3>
+        <img class="w-[1536px]" src="assets/divider.svg" alt="" />
+        <p class="poppins-medium text-xl text-[#00303c] my-4">
+          Event delegation in the DOM is a technique where you attach a single
+          event listener to a parent element instead of individual child
+          elements. This is useful when you have many child elements that need
+          to respond to the same event, such as click, mouseover, etc. When an
+          event is triggered on a child element, it bubbles up to the parent
+          element. The parent element, having the event listener attached, can
+          handle the event for any of its child elements, even if they are added
+          dynamically after the event listener is set. This improves performance
+          and reduces memory usage.
+        </p>
+      </div>
+      <!-- Q4 -->
+      <div class="container bg-white rounded-2xl p-7 mt-4">
+        <h3 class="poppins-bold text-3xl text-[#00303c] mb-4">
+          Question-4: What is event bubbling in the DOM?
+        </h3>
+        <img class="w-[1536px]" src="assets/divider.svg" alt="" />
+        <p class="poppins-medium text-xl text-[#00303c] my-4">
+          Event bubbling in the DOM is the process by which an event triggered
+          on an element propagates (or "bubbles") up through its ancestor
+          elements in the DOM hierarchy.
+        </p>
+      </div>
+      <!-- Q5 -->
+      <div class="container bg-white rounded-2xl p-7 mt-4">
+        <h3 class="poppins-bold text-3xl text-[#00303c] mb-4">
+          Question-5: How do you create, add, and remove elements using
+          JavaScript?
+        </h3>
+        <img class="w-[1536px]" src="assets/divider.svg" alt="" />
+        <p class="poppins-medium text-xl text-[#00303c] my-4">
+          In JavaScript, we can create, add, and remove elements from the <b>DOM</b>
+          using the following methods: <i>Creating an element:</i> Use
+          <b>document.createElement()</b> to create a new element. <i>Adding an element:</i> To
+          add an element to the DOM, use methods like <b>appendChild()</b>,
+          <b>insertBefore()</b>, or <b>append()</b>Removing an element: To remove an element,
+          use removeChild() or remove():These methods allow you to dynamically
+          manipulate the DOM by creating new elements, inserting them into the
+          document, and removing them as needed.
+        </p>
+      </div>
+    </main>
+    <script src="script.js"></script>
+  </body>
+</html>

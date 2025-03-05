@@ -58,6 +58,11 @@ body {
   background-color: #f4f7ff;
   height: 100vh;
 }
+
+.body-blog {
+  height: auto;
+  padding-bottom: 60px;
+}
 .container {
   max-width: 1536px;
   margin-left: auto;
@@ -103,6 +108,16 @@ main {
     #9ba8f8 99.84%
   );
   border-radius: 12px;
+  transition: all 0.3s ease;
+}
+
+.discover-something-new:hover {
+  background: linear-gradient(
+    91.74deg,
+    #9ba8f8 0.25%,
+    #6c7ffa 52.64%,
+    #3752fd 99.84%
+  );
 }
 
 .divider-dotted {
@@ -165,6 +180,11 @@ main {
   background-color: #3752fd;
   color: white;
   border-radius: 8px;
+  transition: background-color 0.15s ease;
+}
+
+.button:hover {
+  background-color: #6c7ffa;
 }
 
 .clear-history-btn {
